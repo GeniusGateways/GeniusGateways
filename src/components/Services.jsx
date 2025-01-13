@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
 import "./../styles/services.css";
 
+// Import icons directly
+import visaIcon from "../assets/visaIcon.png";
+import emigrationIcon from "../assets/emigrationIcon.png";
+import servicesIcon from "./../assets/servicesIcon.png";
 
 const ServicesSlider = () => {
   const [activeIndex, setActiveIndex] = useState(1);
 
+  // Define services with direct icon imports
   const services = [
     {
       title: 'Visa Application',
       description: 'Genius Gateways provides comprehensive visa application support, including document preparation, biometric assistance, and smooth processing for global travel and relocation.',
-      icon: 'visa-icon.png', // Replace with the actual path to the image
+      icon: visaIcon,
     },
     {
       title: 'Visa Emigration Services',
       description: 'Genius Gateways offers expert visa services, ensuring smooth processing for study, work, family, and travel visas worldwide.',
-      icon: 'emigration-icon.png', // Replace with the actual path to the image
+      icon: emigrationIcon,
     },
     {
       title: 'Emigration Services',
       description: 'Genius Gateways offers expert emigration services, assisting with documentation, visa processing, and seamless relocation to destinations worldwide.',
-      icon: 'services-icon.png', // Replace with the actual path to the image
+      icon: servicesIcon,
     },
   ];
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./../styles/blogPage.css";
+import "./../styles/mbbs.css";
 
 import study_in_us from "../assets/study_in_us.png";
 import study_in_germany from "../assets/study_in_germany.png";
@@ -9,7 +9,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
 
-const BlogPage = () => {
+const Mbbs = () => {
   return (
 
     <>
@@ -20,7 +20,7 @@ const BlogPage = () => {
     <section className="blog-section">
       {/* Blog Header */}
       <div className="blog-header">
-        <h1>Blog</h1>
+        <h1>MBBS</h1>
         <span className="underline"></span>
       </div>
 
@@ -76,4 +76,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default Mbbs;

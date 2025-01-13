@@ -1,13 +1,13 @@
 /* General header styling */
 .header {
-  background-color: #f1f1f1;
+  background-color: transparent; /* Set background to transparent */
+  opacity: 1; /* Ensure full visibility of the header's content */
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;  /* Positioning context for the sidebar */
+  position: relative; /* Positioning context for the sidebar */
 }
 
 .header .logo h2 {

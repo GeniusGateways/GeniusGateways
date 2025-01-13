@@ -1,6 +1,8 @@
 import React from "react";
 import "./../styles/aboutUs.css";
 
+import Group_88 from "../assets/Group_88.png"
+
 const AboutUs = () => {
   return (
     <div className="container">
@@ -21,10 +23,10 @@ const AboutUs = () => {
           </a>
         </div>
         <div className="image">
-          {/* <img src={teamImage} alt="Team" className="image-content" /> */}
-          <div className="play-button">
+          <img src={Group_88} alt="Team" className="image-content" />
+          {/* <div className="play-button">
             <div className="play-icon">&#9658;</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

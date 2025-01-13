@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./../styles/testimonials.css";
-// import clientPhoto from "./../assets/client-photo.jpg";
+import testinomial_1 from "../assets/testinomial_1.jpg";
+import test_3 from "../assets/test_3.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -9,14 +10,14 @@ const Testimonials = () => {
       text: "I am extremely satisfied with the Fuel Ethanol Plant from SAR Chem-Tech Solution. The product quality and performance exceeded my expectations. Their team provided exceptional support throughout the process, from initial consultation to installation. Highly recommended for anyone looking for reliable and efficient industrial solutions.",
       author: "Kaushik Chaudhari",
       role: "Evaporator",
-      // photo: clientPhoto,
+      photo: testinomial_1,
     },
     {
       id: 2,
       text: "The team at SAR Chem-Tech provided exceptional service. Their solutions were exactly what we needed for our project, and their support was unparalleled. I highly recommend them for anyone in need of high-quality industrial solutions.",
       author: "Priya Sharma",
       role: "Project Manager",
-      // photo: clientPhoto,
+      photo: test_3,
     },
     // Add more testimonials as needed
   ];

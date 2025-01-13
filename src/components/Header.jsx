@@ -16,9 +16,10 @@ const Header = () => {
       </div>
       <nav className={`nav-links ${isSidebarOpen ? "open" : ""}`}>
         <a href="home">Home</a>
-        <a href="about">About us</a>
+        <a href="about">About Us</a>
         <a href="study">Study Visa</a>
         <a href="blog">Blog</a>
+        <a href="mbbs">MBBS</a>
         <a href="contactus" className="btn-contact">Contact Us</a>
         {/* Removed the "Contact Us" button from the header */}
       </nav>
@@ -33,6 +34,7 @@ const Header = () => {
         <a href="about" onClick={toggleSidebar}>About us</a>
         <a href="study" onClick={toggleSidebar}>Study Visa</a>
         <a href="blog" onClick={toggleSidebar}>Blog</a>
+        <a href="mbbs" onClick={toggleSidebar}>MBBS</a>
         <a href="ContactUs" className="btn-contact" onClick={toggleSidebar}>Contact Us</a>
       </div>
     </header>

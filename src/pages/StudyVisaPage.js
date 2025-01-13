@@ -1,8 +1,8 @@
 import React from "react";
 import "./../styles/studyVisa.css";
-// import usaStudent from "./../assets/usa-student.jpg";
-// import germanyStudent from "./../assets/germany-student.jpg";
-// import ukStudent from "./../assets/uk-student.jpg";
+import study_in_us from "../assets/study_in_us.png";
+import study_in_germany from "../assets/study_in_germany.png";
+import study_in_uk from "../assets/study_in_uk.png";
 
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -40,14 +40,14 @@ const StudyVisaPage = () => {
           </ul>
         </div>
         <div className="image-content">
-          {/* <img src={usaStudent} alt="Study in USA" /> */}
+          <img src={study_in_us} alt="Study in USA" />
         </div>
       </div>
 
       {/* Study in Germany */}
       <div className="study-section reverse">
         <div className="image-content">
-          {/* <img src={germanyStudent} alt="Study in Germany" /> */}
+          <img src={study_in_germany} alt="Study in Germany" />
         </div>
         <div className="text-content">
           <h2>Study in Germany Overview</h2>
@@ -82,7 +82,7 @@ const StudyVisaPage = () => {
           </ul>
         </div>
         <div className="image-content">
-          {/* <img src={ukStudent} alt="Study in UK" /> */}
+          <img src={study_in_uk} alt="Study in UK" />
         </div>
       </div>
     </section>

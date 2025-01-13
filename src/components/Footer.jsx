@@ -8,7 +8,8 @@ const Footer = () => {
     <div className="footer-container">
       {/* Section 1: Contact Information */}
       <div className="footer-section">
-        <img src="logo.png" alt="Genius Gateways" className="footer-logo" /> {/* Replace with actual logo path */}
+        {/* <img src="Genius_Gateway.png" alt="Genius Gateways" className="footer-logo" />    Replace with actual logo path */}
+        <h2>GENIUS GATEWAYS</h2>
         <p className="footer-heading">
           <strong>SEAMLESS <span className="highlight">VISA SOLUTIONS</span></strong><br />
           FOR YOUR <span className="highlight">GLOBAL JOURNEY</span>!
@@ -27,13 +28,13 @@ const Footer = () => {
       <div className="footer-section">
         <h4>Links</h4>
         <ul className="footer-links">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Case Studies</a></li>
-          <li><a href="#">How it works</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Areas We Serve</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="study">Services</a></li>
+          <li><a href="study">Case Studies</a></li>
+          <li><a href="blog">How it works</a></li>
+          <li><a href="blog">Blog</a></li>
+          <li><a href="mbbs">Careers</a></li>
+          <li><a href="study">Areas We Serve</a></li>
         </ul>
       </div>
 
