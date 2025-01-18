@@ -1,78 +1,70 @@
-import React from "react";
-import "./../styles/blogPage.css";
-
-import study_in_us from "../assets/study_in_us.png";
-import study_in_germany from "../assets/study_in_germany.png";
-import study_in_uk from "../assets/study_in_uk.png";
+import React, { useEffect, useState } from "react";
+import "../styles/blogPage.css";
+import { Link } from "react-router-dom";
 
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Footer from "../components/Footer";
+import { backend_api } from "../App";
 
 const BlogPage = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  const fetchBlogs = async () => {
+    try {
+      console.log(`${backend_api}/api/Blog`);
+      const req = await fetch(`${backend_api}/api/Blog`);
+      const data = await req.json();
+      console.log(data.docs); // Logs the blogs data for debugging
+      setBlogs(data.docs); // Assuming the API response has the "docs" field containing blog data
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
   return (
-
     <>
-    <Header />
-    <HeroSection />
-    
-    
-    <section className="blog-section">
-      {/* Blog Header */}
-      <div className="blog-header">
-        <h1>Blog</h1>
-        <span className="underline"></span>
-      </div>
+      <Header />
+      <HeroSection />
 
-      {/* Blog Cards */}
-      <div className="blog-cards">
-        {/* Blog Card 1 */}
-        <div className="blog-card">
-          <div className="blog-image">
-            <img src={study_in_us} alt="Consultation and Guidance" />
-          </div>
-          <div className="blog-content">
-            <h2>Consultation and Guidance</h2>
-            <p>
-              Providing expert advice on country-specific study visa requirements and immigration laws, guiding applicants through the process, ensuring compliance, and offering tailored support for successful applications and seamless relocation.
-            </p>
-            <a href="#" className="read-more">Read more &rarr;</a>
-          </div>
+      <section className="blog-section">
+        {/* Blog Header */}
+        <div className="blog-header">
+          <h1>Blog</h1>
+          <span className="underline"></span>
         </div>
 
-        {/* Blog Card 2 */}
-        <div className="blog-card">
-          <div className="blog-image">
-            <img src={study_in_germany} alt="Document Preparation" />
-          </div>
-          <div className="blog-content">
-            <h2>Document Preparation</h2>
-            <p>
-              Helping collect and verify key documents, including admission letters, financial statements, and medical certificates, ensuring all paperwork is accurate, complete, and meets the required standards for submission.
-            </p>
-            <a href="#" className="read-more">Read more &rarr;</a>
-          </div>
+        {/* Dynamically render blog cards */}
+        <div className="blog-cards">
+          {blogs.map((blog) => (
+            <div className="blog-card" key={blog._id}>
+              <div className="blog-image">
+                <img
+                  src={`${backend_api}${blog.image.url}`}
+                  alt={blog.title || "Blog Image"}
+                />
+              </div>
+              <div className="blog-content">
+                <h2>{blog.title}</h2>
+                <p>
+                  {blog['short-description'] || "No description available."}
+                </p>
+                <Link to={`/Detail`}   state={{ blog }}
+className="read-more">
+                  Read more &rarr;
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
+      </section>
 
-        {/* Blog Card 3 */}
-        <div className="blog-card">
-          <div className="blog-image">
-            <img src={study_in_uk} alt="Tracking and Updates" />
-          </div>
-          <div className="blog-content">
-            <h2>Tracking and Updates</h2>
-            <p>
-              Tracking visa application progress and offering timely updates to students, ensuring they stay informed about their application status and any necessary actions required throughout the process.
-            </p>
-            <a href="#" className="read-more">Read more &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <Footer />
-  </>
+      <Footer />
+    </>
   );
 };
 

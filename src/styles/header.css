@@ -1,8 +1,9 @@
 /* General header styling */
 .header {
-  background-color: transparent; /* Set background to transparent */
-  opacity: 1; /* Ensure full visibility of the header's content */
-  padding: 20px 40px;
+  background-color: black; /* Transparent background for the header */
+  /* background: url('../assets/backgound2.png') no-repeat center center/cover; */
+  opacity: 1; /* Full visibility of the header's content */
+  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +21,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 20px;
+  background-color: transparent; /* Transparent background for the navbar */
 }
 
 /* Navigation links */
@@ -30,17 +32,12 @@ nav a {
   padding: 10px 15px;
 }
 
-/* nav a:hover {
-  color: #6fe73c;
-} */
-
-
 nav .btn-contact {
-    background-color: #3ce73f;
-    color: white;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: bold;
+  background-color: #3ce73f;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
 /* Hamburger menu for smaller screens */
@@ -94,11 +91,11 @@ nav .btn-contact {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -100%;  /* Initially position the sidebar off-screen */
+  right: -100%; /* Initially position the sidebar off-screen */
   height: 100%;
   width: 250px;
-  background-color: #fff;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: transparent; /* Transparent background for the sidebar */
+  box-shadow: none; /* Remove box-shadow for full transparency */
   flex-direction: column;
   padding-top: 60px; /* To avoid overlap with header */
   transition: right 0.3s ease;
@@ -113,13 +110,11 @@ nav .btn-contact {
 }
 
 .sidebar a:hover {
-  /* background-color: #e74c3c; */
   color: rgb(32, 177, 10);
 }
 
 nav .btn-contact {
-    background-color: #3ce747;
-    
+  background-color: #3ce747;
 }
 
 /* When the sidebar is open, show it */

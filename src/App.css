@@ -1,5 +1,133 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.main-container {
+  background-image: url("./assets/backgound2.png"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.header {
+  background: transparent; /* Semi-transparent background for better visibility */
+  position:absolute; 
+  width: 100%;
+  z-index: 1000;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6347;
+}
+
+.hamburger {
+  display: none; /* Hidden by default; shown on smaller screens */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  background-color: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+}
+
+.sidebar {
+  display: none; /* Sidebar only visible when toggled */
+}
+
+/* Hero Section */
+.hero {
+  padding-top: 80px; /* Adjust for fixed header height */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.highlight {
+  color: #ff6347; /* Highlight color */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger menu */
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
 }

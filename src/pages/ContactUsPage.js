@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./../styles/contactUs.css";
+import "../styles/contactUs.css";
 
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -77,7 +77,7 @@ const ContactUsPage = () => {
             <p>Say something to start a live chat!</p>
             <ul>
               <li>
-                <i className="icon">&#9742;</i> +91-9766232181
+                <i className="icon">&#9742;</i> +91-7666058015
               </li>
               <li>
                 <i className="icon">&#9993;</i> info@geniusgateway.com

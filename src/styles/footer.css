@@ -17,12 +17,12 @@
   
   .footer-logo {
     width: 150px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   
   .footer-heading {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
   
   .highlight {

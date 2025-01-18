@@ -3,6 +3,7 @@ import "./../styles/heroSection.css";
 
 const HeroSection = () => {
   return (
+
     <section className="hero">
       <div className="hero-content">
         <h1>

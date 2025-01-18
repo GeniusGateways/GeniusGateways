@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -8,11 +9,13 @@ import ContactUsPage from "./pages/ContactUsPage";
 import BlogPage from "./pages/BlogPage";
 import Mbbs from "./pages/Mbbs";
 import Popup from "./components/popup";
+import { Detail } from "./pages/Detail";
 
 
+export  const backend_api='http://localhost:3000'
 
+   const App = () => {
 
-const App = () => {
   return (
     <>
       <Router>
@@ -25,7 +28,7 @@ const App = () => {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/mbbs" element={<Mbbs />} />
           <Route path="/contactus" element={<ContactUsPage />} />
-         
+         <Route path="/Detail" element={<Detail/>}/>
         </Routes>
       </Router>
     </>

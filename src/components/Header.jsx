@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./../styles/header.css";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -11,7 +12,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        {/* <img src="./assets/logo.png" alt="Genius Gateways" /> */}
+        {/* <img src={logo} alt="Genius Gateways" /> */}
         <h2>GENIUS GATEWAYS</h2>
       </div>
       <nav className={`nav-links ${isSidebarOpen ? "open" : ""}`}>
@@ -37,6 +38,7 @@ const Header = () => {
         <a href="mbbs" onClick={toggleSidebar}>MBBS</a>
         <a href="ContactUs" className="btn-contact" onClick={toggleSidebar}>Contact Us</a>
       </div>
+      
     </header>
   );
 };
