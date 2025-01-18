@@ -62,8 +62,10 @@ const ContactUsPage = () => {
 
   return (
     <>
-      <Header />
-      <HeroSection />
+      <div className="main-container">
+                <Header />
+                <HeroSection />
+      </div>
 
       <section className="contact-us">
         <div className="contact-header">

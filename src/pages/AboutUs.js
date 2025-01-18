@@ -13,8 +13,10 @@ import Footer from "../components/Footer";
 const About = () => {
     return (
         <>
-            <Header />
-            <HeroSection />
+            <div className="main-container">
+                <Header />
+                <HeroSection />
+            </div>
             <AboutUs />
             <WhyChooseUs />
             <Testimonials />

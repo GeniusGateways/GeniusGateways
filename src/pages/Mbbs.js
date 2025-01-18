@@ -28,8 +28,10 @@ const Mbbs = () => {
 
   return (
     <>
-      <Header />
-      <HeroSection />
+      <div className="main-container">
+                <Header />
+                <HeroSection />
+      </div>
 
       <section className="mbbs-section">
         {/* MBBS Header */}

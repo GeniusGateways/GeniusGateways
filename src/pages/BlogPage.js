@@ -28,8 +28,10 @@ const BlogPage = () => {
 
   return (
     <>
-      <Header />
-      <HeroSection />
+      <div className="main-container">
+                <Header />
+                <HeroSection />
+      </div>
 
       <section className="blog-section">
         {/* Blog Header */}
