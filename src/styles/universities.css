@@ -1,141 +1,126 @@
-/* Section Styling */
+/* Main Section Wrapper */
 .universities-section {
-    padding: 2rem 1rem;
-    background-color: #ffffff;
-    text-align: center;
+  width: 88vw;
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(to right, #f8f9fc, #eef1f7); /* Light gradient */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 15px;
+  text-align: center;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* "Meet the Universities" Heading */
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #041777 !important;
+  margin-bottom: 20px;
+  display: block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect on Heading */
+.section-header h2:hover {
+  color: #e74c3c;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+/* Container for University Logos */
+.universities-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 90px; /* Increased space between images */
+  margin-top: 20px;
+}
+
+/* Individual University Box */
+.university {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* University Logos - Add Scaling Animation */
+.university img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Hover Effect - Enlarges the Logos */
+.university img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
   }
-  
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .section-header h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #6a1b9a;
-    position: relative;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(40px);
   }
-  
-  .section-header h2::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background-color: #6a1b9a;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .navigation-buttons {
-    display: flex;
-    gap: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .universities-section {
+      width: 95vw;
+      padding: 30px;
   }
-  
-  .nav-btn {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #6a1b9a;
-    border-radius: 50%;
-    background-color: transparent;
-    color: #6a1b9a;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-btn:hover {
-    background-color: #6a1b9a;
-    color: white;
-  }
-  
-  .universities-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .university {
-    text-align: center;
-    width: 150px;
-    flex: 1 1 150px; /* Flex-grow for dynamic width */
-    max-width: 200px; /* Ensures maximum width constraint */
-  }
-  
+
   .university img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+      width: 130px;
+      height: 80px;
   }
-  
-  .university:hover img {
-    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .universities-section {
+      width: 98vw;
+      padding: 20px;
   }
-  
-  .university p {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-  }
-  
-  /* Responsive Design */
-  
-  /* For tablets (screen width <= 768px) */
-  @media (max-width: 768px) {
-    .section-header {
+
+  .universities-container {
       flex-direction: column;
-      gap: 1rem;
-    }
-  
-    .universities-container {
-      gap: 1rem;
-    }
-  
-    .university {
+      gap: 30px;
+  }
+
+  .university img {
       width: 120px;
-    }
-  
-    .university img {
-      border-radius: 8px;
-    }
+      height: 70px;
   }
-  
-  /* For mobile devices (screen width <= 480px) */
-  @media (max-width: 480px) {
-    .section-header h2 {
-      font-size: 1.5rem;
-    }
-  
-    .nav-btn {
-      width: 35px;
-      height: 35px;
-      font-size: 0.9rem;
-    }
-  
-    .universities-container {
-      gap: 0.5rem;
-    }
-  
-    .university {
-      width: 100px;
-    }
-  
-    .university img {
-      border-radius: 5px;
-    }
-  
-    .section-header {
-      gap: 1rem;
-    }
+}
+
+@media (max-width: 480px) {
+  .university img {
+      width: 110px;
+      height: 60px;
   }
-  
+}
+

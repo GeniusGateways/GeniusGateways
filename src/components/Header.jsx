@@ -21,7 +21,7 @@ const Header = () => {
         <a href="study">Study Visa</a>
         <a href="blog">Blog</a>
         <a href="mbbs">MBBS</a>
-        <a href="contactus" className="btn-contact">Contact Us</a>
+        <a href="contactus" className="btn-contact">Contact</a>
         {/* Removed the "Contact Us" button from the header */}
       </nav>
       <div className="hamburger" onClick={toggleSidebar}>

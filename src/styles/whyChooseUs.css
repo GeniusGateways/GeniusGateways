@@ -1,115 +1,116 @@
-/* General Styling */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f8f8;
+/* Main Why Choose Us Container */
+.why-choose-container {
+  width: 90vw;  /* ✅ Consistent width like other sections */
+  max-width: 1300px; /* ✅ Ensures layout consistency */
+  margin: 60px auto;
+  padding: 50px;
+  background: linear-gradient(to right, #f8f9fc, #eef1f7);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  overflow: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Why Choose Us Heading */
+.why-choose-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #041777;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect on Heading */
+.why-choose-title:hover {
+  color: #e74c3c;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+/* Why Choose Us Content */
+.why-choose-content {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Stats Box Container */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Individual Stat Box */
+.stat-box {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  animation: slideUp 1.2s ease-in-out;
+}
+
+/* Hover Effect for Stats Box */
+.stat-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
   }
-  
-  section {
-    padding: 3rem 1rem;
-    text-align: center;
+  to {
+      opacity: 1;
   }
-  
-  /* Section Header */
-  .why-choose-us .section-header h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #4CAF50;
-    margin-bottom: 2rem;
-    letter-spacing: 0.5px;
+}
+
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(40px);
   }
-  
-  /* Description Section */
-  .description {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.8;
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  
-  .description .quote {
-    font-size: 3rem;
-    color: #8A2BE2;
-    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-choose-container {
+      width: 95vw;
+      padding: 30px;
   }
-  
-  .left-quote {
-    position: absolute;
-    top: -10px;
-    left: -20px;
+}
+
+@media (max-width: 768px) {
+  .why-choose-container {
+      width: 98vw;
+      padding: 20px;
   }
-  
-  .right-quote {
-    position: absolute;
-    top: -10px;
-    right: -20px;
-  }
-  
-  /* Stats Section */
-  .stats-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  
+
   .stat-box {
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 1.5rem 1rem;
-    text-align: center;
-    flex: 1 1 calc(33.33% - 1rem); /* 3 columns */
-    max-width: 300px;
-    min-width: 250px;
+      min-width: 100%;
   }
-  
-  .stat-box h3 {
-    font-size: 1.5rem;
-    color: #6A1B9A;
-    font-weight: bold;
-    margin: 0;
+}
+
+@media (max-width: 480px) {
+  .why-choose-title {
+      font-size: 2rem;
   }
-  
-  .stat-box p {
-    font-size: 1rem;
-    color: #333;
-    margin: 0.5rem 0 0;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .description {
-      padding: 0 1rem;
-      font-size: 0.95rem;
-    }
-  
-    .stats-container {
-      gap: 1rem;
-    }
-  
-    .stat-box {
-      flex: 1 1 calc(50% - 1rem); /* 2 columns on tablets */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .description {
+
+  .stat-box {
       font-size: 0.9rem;
-    }
-  
-    .stat-box {
-      flex: 1 1 100%; /* 1 column on mobile */
-    }
-  
-    .stat-box h3 {
-      font-size: 1.3rem;
-    }
-  
-    .stat-box p {
-      font-size: 0.95rem;
-    }
   }
-  
+}

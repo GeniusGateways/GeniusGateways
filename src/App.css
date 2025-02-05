@@ -1,93 +1,151 @@
+/* Logo Styling - 3D Effect & Animation */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600&display=swap');
+
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f4f4f4;
 }
 
-.main-container {
-  background-image: url("./assets/backgound2.png"); /* Replace with your image path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-}
-
+/* Modern Header with Updated Background Color */
 .header {
-  background: transparent; /* Semi-transparent background for better visibility */
-  position:absolute; 
+  background-color: rgb(20, 152, 205)  ; /* Set header background */
+  position: static; /* Ensure header scrolls normally */
   width: 100%;
-  z-index: 1000;
-  padding: 10px 20px;
+  padding: 12px 15px; /* Adjusted padding */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensure logo on left, nav on right */
   align-items: center;
-  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 3 !important; /* Ensure full visibility */
 }
 
+/* Left-Side Logo (GENIUS GATEWAYS) */
+.logo {
+  font-size: 28px; /* Increased size for better visibility */
+  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif; /* Modern, stylish font */
+  color: white; /* Keep contrast */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 
+               -3px -3px 6px rgba(255, 255, 255, 0.2); /* 3D Shadow Effect */
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Navigation Links Positioned to the Right */
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 12px; /* Proper spacing for a professional look */
+  flex-wrap: nowrap; /* Prevents wrapping */
+  margin-right: 20px; /* Ensure alignment to right */
 }
 
+/* Default Navigation Link Style */
 .nav-links a {
-  color: rgb(0, 0, 0);
-  opacity: 1;
+  color: black; /* Ensure all links are black */
   text-decoration: none;
   font-size: 16px;
+  font-weight: bold; /* Make all links bold */
+  padding: 6px 10px; /* Adjust padding for proper spacing */
+  transition: color 0.3s ease, transform 0.3s ease; /* Unified smooth animation */
+  white-space: nowrap; /* Prevents text from breaking into new lines */
+}
+
+/* Hover Effect (Text turns White & Slight Scale Up) */
+.nav-links a:hover {
+  color: #ffffff;
+  transform: scale(1.1); /* Slight increase on hover */
+}
+
+.nav-links a:last-child {
+  color: black !important; /* Ensure it's black */
+  font-weight: bold !important;
+  background: none !important; /* Ensure no background color */
+  border: none !important; /* Ensure no border effect */
+  padding: 6px 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Ensure Footer Has Exactly the Same Background as Header */
+.footer {
+  background-color: rgb(20, 114, 151) !important; /* Ensure exact same color */
+  color: black;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  opacity: 1 !important; /* Ensure no transparency */
+}
+
+/* Footer Links */
+.footer a {
+  color: black;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #ff6347;
+.footer a:hover {
+  color: #000000;
 }
 
+/* Mobile Responsive Menu (Hamburger) */
 .hamburger {
-  display: none; /* Hidden by default; shown on smaller screens */
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
 
 .hamburger .bar {
-  background-color: white;
+  background-color: black;
   height: 3px;
   width: 25px;
   margin: 4px 0;
 }
 
+/* Mobile Sidebar Menu */
 .sidebar {
-  display: none; /* Sidebar only visible when toggled */
+  display: none;
 }
 
-/* Hero Section */
-.hero {
-  padding-top: 80px; /* Adjust for fixed header height */
-  height: 100vh; /* Full viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.hero-content h1 {
-  color: white;
-  font-size: 3rem;
-  line-height: 1.2;
-  margin: 0;
-}
-
-.highlight {
-  color: #ff6347; /* Highlight color */
+/* Fade-In & Slide-Down Animation */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    gap: 8px; /* Further reduced spacing for laptop screens */
+  }
+
+  .nav-links a {
+    font-size: 15px; /* Slightly reduce font size for better fit */
+    padding: 5px 8px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide links on smaller screens */
+    display: none; /* Hide navigation links for smaller screens */
   }
 
   .hamburger {
-    display: flex; /* Show hamburger menu */
+    display: flex;
   }
 
   .sidebar {
@@ -128,6 +186,7 @@ body {
   }
 
   .nav-links a {
-    font-size: 14px;
+    font-size: 13px;
+    padding: 4px 6px;
   }
 }

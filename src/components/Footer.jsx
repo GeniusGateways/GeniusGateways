@@ -1,7 +1,7 @@
 import React from "react";
 import { FaWhatsapp, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'; // Importing icons
 import "./../styles/footer.css";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo4.png";
 
 const Footer = () => {
   return (
@@ -10,13 +10,12 @@ const Footer = () => {
       {/* Section 1: Contact Information */}
       <div className="footer-section">
         <img src={logo} alt="Genius Gateways" className="footer-logo" />    
-        <h2>GENIUS GATEWAYS</h2>
+        <h2 className="footer-heading">GENIUS GATEWAYS</h2>
         <p className="footer-heading">
           <strong>SEAMLESS <span className="highlight">VISA SOLUTIONS</span></strong><br />
           FOR YOUR <span className="highlight">GLOBAL JOURNEY</span>!
         </p>
         <div className="footer-contact">
-          <p><FaWhatsapp className="icon" /> +91 7666058015</p>
           <p><FaWhatsapp className="icon" /> +91 7666058015</p>
           <p><FaEnvelope className="icon" /> geniusgateway@gmail.com</p>
         </div>
@@ -34,8 +33,7 @@ const Footer = () => {
           <li><a href="study">Case Studies</a></li>
           <li><a href="blog">How it works</a></li>
           <li><a href="blog">Blog</a></li>
-          <li><a href="mbbs">Careers</a></li>
-          <li><a href="study">Areas We Serve</a></li>
+          
         </ul>
       </div>
 

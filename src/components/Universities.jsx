@@ -7,7 +7,6 @@ import uk from "../assets/uk.png";
 import us from "../assets/us.png";
 import germany from "../assets/germany.jpg";
 
-
 const Universities = () => {
   return (
     <section className="universities-section">
@@ -16,30 +15,32 @@ const Universities = () => {
           <span className="divider"></span>
           Meet the Universities
         </h2>
-        {/* <div className="navigation-buttons">
-          <button className="nav-btn prev">
-            <i>&#8592;</i>
-          </button>
-          <button className="nav-btn next">
-            <i>&#8594;</i>
-          </button>
-        </div> */}
       </div>
+
+      {/* Ensures logos are in a horizontal layout */}
       <div className="universities-container">
         <div className="university">
-          <img src={finland} alt="Finland" />
+          <div className="university-logo">
+            <img src={finland} alt="Finland" />
+          </div>
           <p>Finland</p>
         </div>
         <div className="university">
-          <img src={uk} alt="United Kingdom" />
+          <div className="university-logo">
+            <img src={uk} alt="United Kingdom" />
+          </div>
           <p>United Kingdom (UK)</p>
         </div>
         <div className="university">
-          <img src={us} alt="United States of America" />
+          <div className="university-logo">
+            <img src={us} alt="United States of America" />
+          </div>
           <p>United States Of America</p>
         </div>
         <div className="university">
-          <img src={germany} alt="Germany" />
+          <div className="university-logo">
+            <img src={germany} alt="Germany" />
+          </div>
           <p>Germany</p>
         </div>
       </div>

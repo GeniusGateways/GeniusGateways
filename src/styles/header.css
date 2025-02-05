@@ -1,46 +1,42 @@
-/* General header styling */
+/* General Header Styling */
 .header {
-  background-color: black; /* Transparent background for the header */
-  /* background: url('../assets/backgound2.png') no-repeat center center/cover; */
-  opacity: 1; /* Full visibility of the header's content */
-  padding: 20px 0px;
+  background: linear-gradient(to bottom, #1565c0, #16277b);
+  padding: 15px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: relative; /* Positioning context for the sidebar */
+  position: relative;
+  width: 100%;
+  z-index: 1000;
 }
 
+/* Logo */
 .header .logo h2 {
-  font-size: 1.8rem;
-  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #051251;
   margin: 0;
+  text-transform: uppercase;
 }
 
+/* Navigation Bar */
 nav {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background-color: transparent; /* Transparent background for the navbar */
+  gap: 25px;
 }
 
-/* Navigation links */
+/* Navigation Links */
 nav a {
   text-decoration: none;
-  color: #333;
+  color: white;
   font-size: 1rem;
+  font-weight: 600;
   padding: 10px 15px;
 }
 
-nav .btn-contact {
-  background-color: #3ce73f;
-  color: white;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-/* Hamburger menu for smaller screens */
+/* Hamburger Menu for Small Screens */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -51,89 +47,99 @@ nav .btn-contact {
 .hamburger .bar {
   width: 30px;
   height: 4px;
-  background-color: #333;
+  background-color: white;
   border-radius: 5px;
 }
 
-/* Mobile and tablet responsiveness */
-@media screen and (max-width: 992px) {
-  .header {
-    padding: 20px 30px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .logo h2 {
-    font-size: 1.5rem;
-  }
-
-  nav {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-
-  nav a {
-    font-size: 1.2rem;
-    padding: 12px 15px;
-  }
-
-  /* Hamburger button appears on mobile */
-  .hamburger {
-    display: flex;
-  }
-}
-
-/* Sidebar styles */
+/* Sidebar (Mobile Navigation) */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -100%; /* Initially position the sidebar off-screen */
-  height: 100%;
+  right: -100%;
   width: 250px;
-  background-color: transparent; /* Transparent background for the sidebar */
-  box-shadow: none; /* Remove box-shadow for full transparency */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
   flex-direction: column;
-  padding-top: 60px; /* To avoid overlap with header */
-  transition: right 0.3s ease;
+  align-items: center;
+  padding-top: 60px;
+  transition: right 0.4s ease-in-out;
 }
 
-.sidebar a {
-  font-size: 1.2rem;
-  padding: 15px;
-  text-align: left;
-  text-decoration: none;
-  color: #333;
-}
-
-.sidebar a:hover {
-  color: rgb(32, 177, 10);
-}
-
-nav .btn-contact {
-  background-color: #3ce747;
-}
-
-/* When the sidebar is open, show it */
+/* Sidebar Open State */
 .sidebar.open {
   right: 0;
 }
 
-@media screen and (max-width: 992px) {
+/* Sidebar Navigation Links */
+.sidebar a {
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Close Button in Sidebar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .header {
+    padding: 15px 30px;
+    flex-direction: row;
+  }
+
   nav {
-    display: none; /* Hide the nav on mobile */
+    display: none; /* Hide main nav on smaller screens */
+  }
+
+  .hamburger {
+    display: flex;
   }
 
   .sidebar {
     display: flex;
   }
+}
 
-  .hamburger {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+@media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 15px;
+  }
+
+  .logo h2 {
+    font-size: 1.6rem;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar a {
+    font-size: 0.9rem;
   }
 }

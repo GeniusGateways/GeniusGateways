@@ -18,9 +18,7 @@ const AboutUs = () => {
             the USA, UK, Canada, Australia, Europe, and Gulf countries. With expert guidance and secure processing,
             they ensure hassle-free legalization of personal, educational, and corporate documents across India.
           </p>
-          <a href="#" className="cta-link">
-            See more Informations <span className="arrow">&rarr;</span>
-          </a>
+          
         </div>
         <div className="image">
           <img src={Group_88} alt="Team" className="image-content" />

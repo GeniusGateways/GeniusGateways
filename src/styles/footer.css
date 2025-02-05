@@ -1,146 +1,347 @@
+/* General Footer Styling */
 .footer {
-    background-color: #d1d8e0;
-    padding: 40px 20px;
-  }
-  
+  background: linear-gradient(135deg, #16277b, #1565c0);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 1.5s ease-in-out; /* Animation for the entire footer */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: slideUp 1s ease-in-out; /* Slide-in effect for container */
+}
+
+/* Floating Circle Background */
+.footer::before,
+.footer::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatingCircles 10s linear infinite;
+}
+
+.footer::before {
+  top: -50px;
+  left: -50px;
+}
+
+.footer::after {
+  bottom: -50px;
+  right: -50px;
+}
+
+/* Footer Section */
+.footer-section {
+  position: relative;
+  z-index: 1;
+  animation: fadeInDelay 2s ease-in-out; /* Staggered fade-in */
+}
+
+/* Logo Section */
+.footer-logo {
+  width: 100px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.footer-logo:hover {
+  transform: scale(1.1) rotate(5deg); /* Hover Effect */
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.footer-heading .highlight {
+  color: #020c3f;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: slideLeft 1.5s ease-in-out; /* Slide-in for links */
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #020a3b;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: white;
+  transform: translateX(5px); /* Slide hover effect */
+}
+
+/* Footer Contact */
+.footer-contact p {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #020a3b;
+  transition: transform 0.3s ease;
+}
+
+.footer-contact p:hover {
+  transform: translateY(-3px); /* Subtle hover effect */
+}
+
+.footer-contact .whatsapp-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #25d366;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s ease-in-out;
+}
+
+.footer-contact .whatsapp-btn:hover {
+  background: #20c15a;
+  transform: scale(1.1);
+}
+
+/* Address Section */
+.footer-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #020620;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+  animation: fadeInDelay 2s ease-in-out; /* Fade-in animation */
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: #020a3b;
+  transition: color 0.3s, transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  color: #b93208;
+  transform: scale(1.2); /* Enlarges slightly on hover */
+}
+
+/* Make All Footer Text Bold */
+.footer p,
+.footer h2,
+.footer h4,
+.footer a,
+.footer-contact p,
+.footer-links a {
+  font-weight: bold; /* Make all text bold */
+}
+/* Footer Branding - GENIUS GATEWAYS (Fixing Color Issue) */
+.footer-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #040b2d !important; 
+  font-family:;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  animation: fadeInUp 1.2s ease-in-out;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 
+               -3px -3px 6px rgba(255, 255, 255, 0.1); /* 3D Shadow Effect */
+}
+
+/* Hover Effect */
+.footer-heading:hover {
+  color: #100200 !important;
+  transform: scale(1.1);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), 
+               -4px -4px 8px rgba(133, 108, 108, 0.15);
+}
+
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 1024px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    text-align: center;
+    gap: 25px;
+  }
+
+  .footer-logo {
+    width: 80px;
+  }
+
+  .footer-heading {
+    font-size: 1.3rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact p {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
     gap: 20px;
   }
-  
-  .footer-section {
-    flex: 1;
-    min-width: 300px;
-  }
-  
+
   .footer-logo {
-    width: 150px;
-    /* margin-bottom: 20px; */
-  }
-  
-  .footer-heading {
-    font-size: 1.2rem;
-    /* margin-bottom: 20px; */
-  }
-  
-  .highlight {
-    color: #e74c3c;
-  }
-  
-  .footer-contact p {
-    margin: 10px 0;
-  }
-  
-  .icon {
-    margin-right: 10px;
-  }
-  
-  .whatsapp-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #25d366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links li {
+    width: 75px;
     margin-bottom: 10px;
   }
-  
+
+  .footer-heading {
+    font-size: 1.2rem;
+  }
+
   .footer-links a {
-    text-decoration: none;
-    color: #333;
+    font-size: 0.9rem;
   }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
+
+  .footer-contact p {
+    font-size: 0.85rem;
   }
-  
-  .social-icons {
-    margin-top: 20px;
-  }
-  
+
   .social-icon {
-    font-size: 1.5rem;
-    margin-right: 15px;
-    color: #333;
-    text-decoration: none;
+    font-size: 1.2rem;
   }
-  
-  .social-icon:hover {
-    color: #e74c3c;
-  }
-  
 
+  .whatsapp-btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 1200px) {
-    .footer-container {
-      justify-content: space-around;
-    }
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
   }
-  
-  @media screen and (max-width: 992px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-section {
-      margin-bottom: 20px;
-      text-align: center;
-    }
-  
-    .footer-logo {
-      width: 120px; /* Adjust logo size for smaller screens */
-    }
-  
-    .footer-heading {
-      font-size: 1rem;
-    }
-  
-    .whatsapp-btn {
-      width: 100%; /* Make the button full-width */
-      text-align: center;
-    }
-  
-    .footer-contact p {
-      font-size: 0.8rem;
-    }
-  
-    .social-icons {
-      justify-content: center;
-    }
+
+  .footer-logo {
+    width: 70px;
   }
-  
-  @media screen and (max-width: 576px) {
-    .footer-heading {
-      font-size: 1rem;
-    }
-  
-    .footer-contact p {
-      font-size: 0.75rem;
-    }
-  
-    .social-icon {
-      font-size: 1.2rem;
-    }
-  
-    .footer-links li {
-      margin-bottom: 5px;
-    }
-  
-    .footer-links a {
-      font-size: 0.8rem;
-    }
+
+  .footer-heading {
+    font-size: 1rem;
   }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .footer-contact p {
+    font-size: 0.8rem;
+  }
+
+  .whatsapp-btn {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatingCircles {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
