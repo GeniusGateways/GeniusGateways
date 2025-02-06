@@ -24,18 +24,7 @@ const Footer = () => {
         </a>
       </div>
 
-      {/* Section 2: Links */}
-      <div className="footer-section">
-        <h4>Links</h4>
-        <ul className="footer-links">
-          <li><a href="about">About Us</a></li>
-          <li><a href="study">Services</a></li>
-          <li><a href="study">Case Studies</a></li>
-          <li><a href="blog">How it works</a></li>
-          <li><a href="blog">Blog</a></li>
-          
-        </ul>
-      </div>
+     
 
       {/* Section 3: Address */}
       <div className="footer-section">
