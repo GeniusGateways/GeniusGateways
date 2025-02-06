@@ -24,7 +24,7 @@
 }
 
 h1 {
-  font-size: 2rem !important;
+  font-size: 2rem;
   color: #041777;
 }
 
@@ -48,96 +48,11 @@ h1 {
 .image:hover img {
   transform: scale(1.05);
 }
-/* ===== RESPONSIVE DESIGN FIXES ===== */
 
-/* === RESPONSIVE FIXES === */
-
-/* Default Styles (For Large Screens) */
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 20px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Ensure Content Fills Screen on Small Devices */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 280px;
-  max-width: 600px;
-  text-align: center;
-}
-
-.about-text h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #041777;
-}
-
-/* Make Image Responsive */
-.about-image {
-  flex: 1;
-  max-width: 100%;
-  text-align: center;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-}
-
-/* === MOBILE RESPONSIVENESS === */
-@media (max-width: 992px) {
-  .about-container {
-    padding: 40px 15px;
-  }
-
-  .about-text h1 {
-    font-size: 2rem;
-  }
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .about-content {
+  .content {
     flex-direction: column;
     text-align: center;
-  }
-
-  .about-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .about-image img {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-container {
-    padding: 30px 10px;
-  }
-
-  .about-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .about-text p {
-    font-size: 0.9rem;
-  }
-
-  .about-image img {
-    max-width: 85%;
   }
 }

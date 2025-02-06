@@ -1,6 +1,6 @@
 /* General Footer Styling */
 .footer {
-  background: linear-gradient(135deg, #16277b, #1565c0);
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   color: white;
   padding: 40px 20px;
   position: relative;
@@ -232,7 +232,7 @@
   }
 
   .footer-logo {
-    width: 75px;
+    width: 20px;
     margin-bottom: 10px;
   }
 

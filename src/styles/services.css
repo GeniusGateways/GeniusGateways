@@ -30,7 +30,7 @@ body {
 .services-slider {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap; /* Ensures wrapping on smaller screens */
 }
 
@@ -51,7 +51,7 @@ body {
 
 /* Hover Effect for Service Cards */
 .service-card:hover {
-  transform: scale(1.08); /* Slightly enlarges on hover */
+  transform: scale(1.04); /* Slightly enlarges on hover */
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -121,7 +121,7 @@ body {
   }
 
   .service-title {
-      font-size: 1.3rem;
+      font-size: .3rem;
   }
 
   .service-description {
@@ -148,7 +148,7 @@ body {
 /* For mobile devices (screen width <= 480px) */
 @media (max-width: 480px) {
   .services-container {
-      padding: 30px 15px;
+      padding: 60px 20px;
   }
 
   .services-title {

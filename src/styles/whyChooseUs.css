@@ -1,9 +1,9 @@
 /* Main Why Choose Us Container */
 .why-choose-container {
-  width: 90vw;  /* ✅ Consistent width like other sections */
-  max-width: 1300px; /* ✅ Ensures layout consistency */
-  margin: 60px auto;
-  padding: 50px;
+  width: 95vw; /* Increased width */
+  max-width: 100px; /* Allows flexibility on larger screens */
+  margin: 50px auto;
+  padding: 60px;
   background: linear-gradient(to right, #f8f9fc, #eef1f7);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -14,11 +14,11 @@
 
 /* Why Choose Us Heading */
 .why-choose-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   color: #041777;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
@@ -26,22 +26,23 @@
 .why-choose-title:hover {
   color: #e74c3c;
   transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+  text-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
 }
 
 /* Why Choose Us Content */
 .why-choose-content {
-  font-size: 1.1rem;
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  padding: 0 20px;
 }
 
 /* Stats Box Container */
 .stats-container {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
   margin-top: 20px;
 }
@@ -49,9 +50,9 @@
 /* Individual Stat Box */
 .stat-box {
   flex: 1;
-  min-width: 300px;
-  max-width: 400px;
-  padding: 20px;
+  min-width: 320px;
+  max-width: 420px;
+  padding: 25px;
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -61,8 +62,8 @@
 
 /* Hover Effect for Stats Box */
 .stat-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Keyframe Animations */
@@ -86,31 +87,72 @@
   }
 }
 
-/* Responsive Design */
+/* ✅ Better Mobile Responsiveness */
 @media (max-width: 1024px) {
   .why-choose-container {
-      width: 95vw;
-      padding: 30px;
+    width: 97vw;
+    padding: 40px;
+  }
+
+  .why-choose-title {
+    font-size: 2.4rem;
   }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
   .why-choose-container {
-      width: 98vw;
-      padding: 20px;
+    width: 100vw; /* Full width */
+    max-width: 98vw;
+    padding: 30px;
+  }
+
+  .why-choose-title {
+    font-size: 2.2rem;
+  }
+
+  .why-choose-content {
+    font-size: 1.1rem;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .stats-container {
+    flex-direction: column; /* Stack stats */
+    align-items: center;
+    gap: 20px;
   }
 
   .stat-box {
-      min-width: 100%;
+    width: 95%; /* Increase width */
+    text-align: center;
+    padding: 20px;
   }
 }
 
+/* Small Mobile Screens */
 @media (max-width: 480px) {
+  .why-choose-container {
+    width: 100vw;
+    padding: 20px;
+  }
+
   .why-choose-title {
-      font-size: 2rem;
+    font-size: 2rem;
+  }
+
+  .why-choose-content {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .stats-container {
+    gap: 15px;
   }
 
   .stat-box {
-      font-size: 0.9rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 18px;
   }
 }

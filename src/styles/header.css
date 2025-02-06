@@ -1,54 +1,104 @@
-/* General Header Styling */
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lobster&display=swap');
+
+/* Header Styling */
 .header {
-  background: linear-gradient(to bottom, #1565c0, #16277b);
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   padding: 15px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: relative;
   width: 100%;
   z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  animation: slideDown 0.7s ease-in-out;
 }
 
-/* Logo */
-.header .logo h2 {
-  font-size: 2rem;
+/* Animate Header on Scroll */
+.header.scrolled {
+  background: rgba(47, 79, 79, 0.9);
+  padding: 12px 40px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modern Animated Logo */
+.logo {
+  font-size: 2.5rem;
   font-weight: bold;
-  color: #051251;
-  margin: 0;
+  color: rgb(9, 11, 44) !important;
   text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  transition: transform 0.5s ease, text-shadow 0.5s ease;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite alternate;
 }
 
-/* Navigation Bar */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+/* Logo Hover Animation */
+.logo:hover {
+  transform: scale(1.1);
+  text-shadow: 0px 0px 15px rgba(85, 3, 3, 0.8);
 }
 
 /* Navigation Links */
-nav a {
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.nav-links a {
   text-decoration: none;
   color: white;
   font-size: 1rem;
   font-weight: 600;
   padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
-/* Hamburger Menu for Small Screens */
+/* Hover Effect with Underline */
+.nav-links a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: white;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .hamburger .bar {
-  width: 30px;
+  width: 35px;
   height: 4px;
   background-color: white;
   border-radius: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Hamburger Animation */
+.hamburger:hover {
+  transform: rotate(360deg);
 }
 
 /* Sidebar (Mobile Navigation) */
@@ -56,69 +106,78 @@ nav a {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 250px;
+  width: 300px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
-  transition: right 0.4s ease-in-out;
+  transition: right 0.5s ease-in-out;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(100%);
 }
 
-/* Sidebar Open State */
+/* Sidebar Open State with Animation */
 .sidebar.open {
   right: 0;
+  opacity: 1;
+  transform: translateX(0);
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Sidebar Navigation Links */
+/* Sidebar Links */
 .sidebar a {
   color: white;
   font-size: 1.2rem;
   padding: 15px;
   text-decoration: none;
-  display: block;
+  transition: all 0.3s ease;
 }
 
-/* Close Button in Sidebar */
+.sidebar a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* Sidebar Close Button */
 .close-btn {
   position: absolute;
   top: 15px;
   right: 20px;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: white;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  transform: rotate(10deg);
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .header {
-    padding: 15px 30px;
-    flex-direction: row;
-  }
-
-  nav {
-    display: none; /* Hide main nav on smaller screens */
+  .nav-links {
+    display: none;
   }
 
   .hamburger {
-    display: flex;
-  }
-
-  .sidebar {
     display: flex;
   }
 }
 
 @media (max-width: 768px) {
   .header {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px 20px;
+    padding: 12px 30px;
   }
 
-  .logo h2 {
-    font-size: 1.8rem;
+  .logo {
+    font-size: 2rem;
+  }
+
+  .sidebar {
+    width: 250px;
   }
 
   .sidebar a {
@@ -131,15 +190,47 @@ nav a {
     padding: 10px 15px;
   }
 
-  .logo h2 {
-    font-size: 1.6rem;
+  .logo {
+    font-size: 1.8rem;
   }
 
   .sidebar {
-    width: 200px;
+    width: 220px;
   }
 
   .sidebar a {
     font-size: 0.9rem;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.8);
   }
 }

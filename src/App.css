@@ -1,5 +1,9 @@
 /* Logo Styling - 3D Effect & Animation */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+
+
 
 
 /* General Styles */
@@ -28,7 +32,7 @@ body {
 .logo {
   font-size: 28px; /* Increased size for better visibility */
   font-weight: bold;
-  font-family: 'Bebas Neue', sans-serif; /* Modern, stylish font */
+  font-family: 'Oswald', sans-serif; /* Modern, stylish font */
   color: white; /* Keep contrast */
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -75,7 +79,7 @@ body {
 
 /* Ensure Footer Has Exactly the Same Background as Header */
 .footer {
-  background-color: rgb(20, 114, 151) !important; /* Ensure exact same color */
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   color: black;
   text-align: center;
   padding: 20px 0;
@@ -106,7 +110,7 @@ body {
 .hamburger .bar {
   background-color: black;
   height: 3px;
-  width: 25px;
+  width: 45px;
   margin: 4px 0;
 }
 
@@ -189,4 +193,12 @@ body {
     font-size: 13px;
     padding: 4px 6px;
   }
+}
+/* Prevent unwanted scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Fix horizontal scrolling */
+  width: 100%;
+  max-width: 100%;
 }

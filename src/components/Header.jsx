@@ -11,9 +11,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">
-        {/* <img src={logo} alt="Genius Gateways" /> */}
-        <h2>GENIUS GATEWAYS</h2>
+      <div className="logo-container">
+        <h2 className="logo">GENIUS GATEWAYS</h2>
       </div>
       <nav className={`nav-links ${isSidebarOpen ? "open" : ""}`}>
         <a href="home">Home</a>
@@ -22,23 +21,22 @@ const Header = () => {
         <a href="blog">Blog</a>
         <a href="mbbs">MBBS</a>
         <a href="contactus" className="btn-contact">Contact</a>
-        {/* Removed the "Contact Us" button from the header */}
       </nav>
       <div className="hamburger" onClick={toggleSidebar}>
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      {/* Sidebar content */}
+
+      {/* Sidebar for Mobile Navigation */}
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <a href="home" onClick={toggleSidebar}>Home</a>
-        <a href="about" onClick={toggleSidebar}>About us</a>
+        <a href="about" onClick={toggleSidebar}>About Us</a>
         <a href="study" onClick={toggleSidebar}>Study Visa</a>
         <a href="blog" onClick={toggleSidebar}>Blog</a>
         <a href="mbbs" onClick={toggleSidebar}>MBBS</a>
-        <a href="ContactUs" className="btn-contact" onClick={toggleSidebar}>Contact Us</a>
+        <a href="contactus" className="btn-contact" onClick={toggleSidebar}>Contact</a>
       </div>
-      
     </header>
   );
 };
