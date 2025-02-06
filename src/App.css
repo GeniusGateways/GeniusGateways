@@ -16,7 +16,7 @@ body {
 
 /* Modern Header with Updated Background Color */
 .header {
-  background-color: rgb(20, 152, 205)  ; /* Set header background */
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   position: static; /* Ensure header scrolls normally */
   width: 100%;
   padding: 12px 15px; /* Adjusted padding */

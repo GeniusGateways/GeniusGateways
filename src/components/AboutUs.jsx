@@ -9,10 +9,10 @@ const AboutUs = () => {
       <div className="content">
         <div className="text">
           <div className="icon-circle"></div>
-          <h1>
+          <h2>
             Effortless <span className="highlight">Emigration</span>,<br /> 
             Boundless <span className="highlight">Opportunities!</span>
-          </h1>
+          </h2>
           <p>
             Genius Gateways, based in Mumbai, specializes in swift document attestation and visa stamping services for
             the USA, UK, Canada, Australia, Europe, and Gulf countries. With expert guidance and secure processing,
