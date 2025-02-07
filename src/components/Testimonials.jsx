@@ -39,7 +39,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <div className="section-header">
-        <span className="promotion">PROMOTION</span>
+       
         <h2>See What Our Clients Say About Us</h2>
       </div>
       <div className="testimonial-slider">

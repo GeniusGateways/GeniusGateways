@@ -9,8 +9,9 @@ const Footer = () => {
     <div className="footer-container">
       {/* Section 1: Contact Information */}
       <div className="footer-section">
-        <img src={logo} alt="Genius Gateways" className="footer-logo" />    
-        <h2 className="footer-heading">GENIUS GATEWAYS</h2>
+  <h2 className="footer-heading">GENIUS GATEWAYS</h2>
+  <img src={logo} alt="Genius Gateways" className="footer-logo" />
+   
         <p className="footer-heading">
           <strong>SEAMLESS <span className="highlight">VISA SOLUTIONS</span></strong><br />
           FOR YOUR <span className="highlight">GLOBAL JOURNEY</span>!
@@ -28,7 +29,7 @@ const Footer = () => {
 
       {/* Section 3: Address */}
       <div className="footer-section">
-        <h4>Contact us</h4>
+        <h1>Contact us</h1>
         <p>
           Registered office:<br />
           A/402, Ganpati Complex, Sector 27,<br />

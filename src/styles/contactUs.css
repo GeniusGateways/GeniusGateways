@@ -274,15 +274,14 @@ textarea {
       margin-left: -4.9%; /* ✅ Moves container to the left */
   }
   
-
   .contact-info {
-    padding: 2.5px;
+    padding: 4.5px;
     text-align: center;
     align-items: center;
   }
 
   .contact-form {
-    padding: 5px;
+    padding: 1px;
     text-align: center;
     align-items: center;
   }
@@ -296,7 +295,7 @@ textarea {
     font-size: 1rem; /* ✅ Increased font size */
   }
 
-  .form-group input,
+  .form-group input{}
   .form-group textarea {
     font-size: 1rem; /* ✅ Increase input font size for readability */
     padding: 0.5rem;
@@ -307,5 +306,6 @@ textarea {
     text-align: center;
     padding: 1rem;
     font-size: 1.1rem; /* ✅ Make button text bigger */
+    margin-bottom: 2rem;
   }
 }

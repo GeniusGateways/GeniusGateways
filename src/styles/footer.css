@@ -12,9 +12,9 @@
 .footer-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 80px;
+  max-width: 1500px;
+  margin: 4 auto;
   position: relative;
   z-index: 1;
   animation: slideUp 1s ease-in-out; /* Slide-in effect for container */
@@ -54,6 +54,8 @@
   width: 100px;
   margin-bottom: 0px;
   transition: transform 0.3s ease-in-out;
+  margin-bottom: 0px; /* ✅ Reduce margin to bring text closer */
+  margin-top: 0px;
 }
 
 .footer-logo:hover {
@@ -103,7 +105,7 @@
 .footer-contact p {
   font-size: 2rem;
   margin: 10px 0;
-  color: #020a3b;
+  color: #020a3b !important;
   transition: transform 0.3s ease;
 }
 
@@ -129,11 +131,26 @@
   transform: scale(1.1);
 }
 
-/* Address Section */
-.footer-section h4 {
-  font-size: 1.3rem;
+.footer-section h1 {
+  font-size: 2.3rem;
   margin-bottom: 10px;
+  color: #1f045b !important;  /* ✅ Set color */
+  text-transform: uppercase;
+  text-align: center;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  animation: fadeInUp 1.2s ease-in-out;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 
+               -3px -3px 6px rgba(255, 255, 255, 0.1); /* ✅ 3D Shadow Effect */
 }
+
+/* ✅ Hover Effect for "Contact Us" */
+.footer-section h1:hover {
+  color: #100200 !important; /* ✅ Change color on hover */
+  transform: scale(1.1);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4), 
+               -4px -4px 8px rgba(133, 108, 108, 0.15); /* ✅ Same hover effect as GENIUS GATEWAYS */
+}
+
 
 .footer-section p {
   font-size: 0.9rem;
@@ -153,11 +170,11 @@
 .social-icon {
   font-size: 1.5rem;
   
-  color: #ac0927;
+  color:  #1f045b !important;
   transition: color 0.3s, transform 0.3s ease-in-out;
 }
 .social-icon:hover {
-  color: #61081e;
+  color: #0d0f85;
   transform: scale(1.2); /* Enlarges slightly on hover */
 }
 
@@ -178,7 +195,7 @@
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 2px;
-  margin-top: 1px; /* ✅ Remove extra space */
+  margin-top: 2px;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
   animation: fadeInUp 1.2s ease-in-out;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 
@@ -269,7 +286,7 @@
   }
 
   .footer-heading {
-    font-size: 1rem;
+    font-size: 2rem;
   }
 
   .footer-links a {

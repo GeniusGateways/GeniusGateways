@@ -1,8 +1,11 @@
 /* Main Why Choose Us Container */
 .why-choose-container {
   width: 90vw;  
-  max-width: 1300px; 
+  max-width: 1400px; 
   margin: 60px auto;
+  margin: 50px auto; /* ✅ Reduced top & bottom margin (was 60px) */
+  padding: 40px; /* ✅ Reduced padding */
+
   padding: 50px;
   background: linear-gradient(to right, #f8f9fc, #eef1f7);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -24,9 +27,9 @@
 
 /* Hover Effect on Heading */
 .why-choose-title:hover {
-  color: #e74c3c;
-  transform: scale(1.05);
-  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+  color: #041056; /* Change text color on hover */
+  transform: scale(1.05); /* Slightly enlarge text */
+  text-shadow: 0px 0px 10px rgba(231, 76, 60, 0.5); /* Add glow effect */
 }
 
 /* Why Choose Us Content */
@@ -43,7 +46,7 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Individual Stat Box */
@@ -106,7 +109,7 @@
 }
 @media (max-width: 480px) {
   .why-choose-container {
-      width: 95vw;
+      width: 85vw;
       padding: 15px; /* Reduced padding */
   }
 

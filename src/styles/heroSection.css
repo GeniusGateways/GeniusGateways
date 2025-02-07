@@ -2,7 +2,7 @@
 .hero {
   background: url('../assets/back17.jpg') no-repeat center center;
   background-size: cover;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   display: flex;
   justify-content: center;

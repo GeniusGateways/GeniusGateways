@@ -22,6 +22,30 @@
   padding: 30px;
   color: black;
 }
+.text h2 {
+  font-size: 2rem;
+  color: #074354 !important;
+  text-align: center; /* ✅ Centers text horizontally */
+  margin: 0 auto; /* ✅ Ensures proper centering */
+  display: block; /* ✅ Ensures block behavior */
+  width: 100%; /* ✅ Ensures full width */
+  margin-bottom: 54px;
+}
+
+.text h2:hover{
+  color: #e74c3c;
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+.text p {
+  font-size: 1.1rem;
+  color: black;
+  text-align: center; /* ✅ Proper text alignment */
+  justify-content: center;
+  max-width: 90%; /* ✅ Prevents paragraph from being too wide */
+  margin: 0 auto; /* ✅ Centers paragraph */
+  line-height: 1.5; /* ✅ Improves readability */
+}
 
 h1 {
   font-size: 2rem;
@@ -36,6 +60,9 @@ h1 {
   flex: 1;
   overflow: hidden;
   position: relative;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .image img {
@@ -46,7 +73,7 @@ h1 {
 }
 
 .image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* Responsive Design */
@@ -54,5 +81,25 @@ h1 {
   .content {
     flex-direction: column;
     text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .text h2 {
+    font-size: 1.5rem; /* ✅ Slightly smaller for mobile */
+    color: #074354 !important;
+    text-align: center; /* ✅ Centers text horizontally */
+    margin: 0 auto; /* ✅ Ensures proper centering */
+    display: block; /* ✅ Ensures block behavior */
+    width: 100%; /* ✅ Ensures full width */
+    margin-bottom: 40px; /* ✅ Adds 1 inch of space */
+  }
+
+  .text p {
+    font-size: 1rem; /* ✅ Adjust font size for mobile */
+    color: #333;
+    text-align: center; /* ✅ Proper text alignment */
+    max-width: 95%; /* ✅ Prevents paragraph from being too wide */
+    margin: 0 auto; /* ✅ Centers paragraph */
+    line-height: 1.6; /* ✅ Improves readability */
   }
 }

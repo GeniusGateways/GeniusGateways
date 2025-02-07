@@ -3,6 +3,7 @@ import "./../styles/whyChooseUs.css";
 
 const Counter = ({ target, duration }) => {
   const [count, setCount] = useState(0);
+  const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
     let start = 0;
@@ -12,6 +13,7 @@ const Counter = ({ target, duration }) => {
       if (start >= target) {
         clearInterval(interval);
         setCount(target);
+        setCompleted(true); // ✅ Mark counting as completed
       } else {
         setCount(Math.ceil(start));
       }
@@ -20,7 +22,7 @@ const Counter = ({ target, duration }) => {
     return () => clearInterval(interval);
   }, [target, duration]);
 
-  return <h3 className="stat-number">{count.toLocaleString()}</h3>;
+  return <h3 className="stat-number">{count.toLocaleString()}{completed && "+"}</h3>;
 };
 
 const WhyChooseUs = () => {

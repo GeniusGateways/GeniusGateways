@@ -30,7 +30,7 @@ body {
 .services-slider {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 13px;
   flex-wrap: wrap; /* Ensures wrapping on smaller screens */
 }
 
