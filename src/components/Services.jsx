@@ -5,6 +5,7 @@ import "./../styles/services.css";
 import visaIcon from "../assets/visaIcon.png";
 import emigrationIcon from "../assets/emigrationIcon.png";
 import servicesIcon from "./../assets/servicesIcon.png";
+import admission from "./../assets/adm.png"
 
 const ServicesSlider = () => {
   const [activeIndex, setActiveIndex] = useState(1);
@@ -17,6 +18,11 @@ const ServicesSlider = () => {
       icon: visaIcon,
     },
     {
+      title: 'Admission Support',
+      description: 'Our expert counselors help students choose the right university and course, ensuring a smooth application process and increasing the chances of securing admission in top institutions worldwide.',
+      icon: admission,
+    },
+    {
       title: 'Visa Emigration Services',
       description: 'Genius Gateways offers expert visa services, ensuring smooth processing for study, work, family, and travel visas worldwide.',
       icon: emigrationIcon,
@@ -26,6 +32,7 @@ const ServicesSlider = () => {
       description: 'Genius Gateways offers expert emigration services, assisting with documentation, visa processing, and seamless relocation to destinations worldwide.',
       icon: servicesIcon,
     },
+
   ];
 
   const goToNext = () => {
@@ -66,11 +73,6 @@ const ServicesSlider = () => {
         ))}
       </div>
 
-      <div className="slider-pagination">
-        <span className="page-number">{String(activeIndex + 1).padStart(2, '0')}</span>
-        <div className="page-line"></div>
-        <span className="page-number">{String(services.length).padStart(2, '0')}</span>
-      </div>
     </div>
   );
 };

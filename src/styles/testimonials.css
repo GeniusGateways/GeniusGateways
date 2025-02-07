@@ -20,14 +20,18 @@
   
   .section-header h2 {
     font-size: 2.4rem;
-    color: black;
+    color:  #041777 !important;
     font-weight: bold;
     font-weight: 700;
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.5px;
   }
-  
+  .section-header h2:hover {
+    color: #e74c3c;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(119, 20, 9, 0.5);
+  }
   /* Slider Styling */
   .testimonial-slider {
     display: flex;
@@ -111,9 +115,7 @@
       flex-direction: column;
     }
   
-    .slider-btn {
-      display: none;
-    }
+
   
     .section-header h2 {
       font-size: 1.8rem;
@@ -141,5 +143,39 @@
       width: 60px;
       height: 60px;
     }
-  }
+    @media (max-width: 480px) {
+      .testimonial-slider {
+          position: relative; /* Ensure the slider is positioned for absolute buttons */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
   
+      .slider-btn {
+          display: flex !important; /* Ensure buttons are visible */
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 93%;
+          transform: translateY(-50%);
+          width: 40px; /* Small button size */
+          height:40px;
+         
+          color: black;
+          font-size: 15px;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 10; /* Ensure buttons appear above testimonials */
+      }
+  
+      .prev {
+          left: 2px; /* Position left button */
+      }
+  
+      .next {
+          right: 2px; /* Position right button */
+      }
+  
+  }
+  }  

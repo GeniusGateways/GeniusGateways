@@ -1,7 +1,7 @@
 /* Main Why Choose Us Container */
 .why-choose-container {
-  width: 90vw;  /* ✅ Consistent width like other sections */
-  max-width: 1300px; /* ✅ Ensures layout consistency */
+  width: 90vw;  
+  max-width: 1300px; 
   margin: 60px auto;
   padding: 50px;
   background: linear-gradient(to right, #f8f9fc, #eef1f7);
@@ -104,13 +104,24 @@
       min-width: 100%;
   }
 }
-
 @media (max-width: 480px) {
+  .why-choose-container {
+      width: 95vw;
+      padding: 15px; /* Reduced padding */
+  }
+
   .why-choose-title {
-      font-size: 2rem;
+      font-size: 1.8rem; /* Reduce heading size */
   }
 
   .stat-box {
-      font-size: 0.9rem;
+      min-width: 90%; /* Reduce width */
+      max-width: 280px; /* Ensure they are not too wide */
+      padding: 10px; /* Reduce padding */
+      font-size: 0.85rem; /* Reduce text size */
   }
-} 
+
+  .stats-container {
+      gap: 15px; /* Reduce space between boxes */
+  }
+}

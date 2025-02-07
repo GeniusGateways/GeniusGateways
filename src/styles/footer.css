@@ -153,11 +153,11 @@
 .social-icon {
   font-size: 1.5rem;
   
-  color: #9f0f0f;
+  color: #ac0927;
   transition: color 0.3s, transform 0.3s ease-in-out;
 }
 .social-icon:hover {
-  color: #020a3b;
+  color: #61081e;
   transform: scale(1.2); /* Enlarges slightly on hover */
 }
 
@@ -174,11 +174,11 @@
 .footer-heading {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #040b2d !important; 
+  color: #1f045b !important; 
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 2px;
-  margin-top: 5px; /* ✅ Remove extra space */
+  margin-top: 1px; /* ✅ Remove extra space */
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
   animation: fadeInUp 1.2s ease-in-out;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), 
@@ -261,7 +261,7 @@
   .footer-container {
     grid-template-columns: 1fr ;
     text-align: center;
-    gap: 15px;
+    gap: 5px;
   }
 
   .footer-logo {

@@ -11,7 +11,7 @@ body {
 /* Contact Section */
 .contact-us {
   max-width: 1500px;
-  margin: 50px ;
+  margin: 20px ;
   padding: 1rem 2rem;
   background: #ffffff;
   border-radius: 20px;
@@ -71,7 +71,7 @@ body {
 
 /* Left Section: Contact Info */
 .contact-info {
-  background: linear-gradient(to bottom, #1565c0,#16277b);
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   color: rgb(0, 0, 12);
   font-weight: 700;
   padding: 2rem;
@@ -185,7 +185,7 @@ textarea {
 /* Submit Button */
 .btn {
   align-self: center;
-  background: linear-gradient(to right, #041777, #1565c0);
+  background: linear-gradient(to right, #4f5888, #4d89ce);
   color: black;
   font-weight: bold;
   border: none;
@@ -259,38 +259,53 @@ textarea {
   }
 }
 
-/* Mobile Devices (screen width <= 480px) */
 @media (max-width: 480px) {
+  .contact-container {
+    width: 100vw; /* ✅ Increased width */
+    max-width: 100%;
+    padding:15x; /* ✅ Increased padding */
+  }  increase size of this container 
+
   .contact-info,
   .contact-form {
-    width: 100%; /* ✅ Utilize full width */
-    padding: 0.5rem;
-    border-radius: 10px;
-
+      width: 110%; /* ✅ Increased width */
+      padding: 1rem; /* ✅ More padding for better spacing */
+      border-radius: 15px;
+      margin-left: -4.9%; /* ✅ Moves container to the left */
   }
+  
 
   .contact-info {
-    padding: 10px;
+    padding: 2.5px;
+    text-align: center;
     align-items: center;
   }
 
   .contact-form {
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     align-items: center;
   }
 
   .contact-header h1 {
-    font-size: 2.5rem;
-    align-items: center;
+    font-size: 2rem; /* ✅ Increase header size */
+    text-align: center;
   }
 
   .contact-header p {
-    font-size: 0.5rem;
+    font-size: 1rem; /* ✅ Increased font size */
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem; /* ✅ Increase input font size for readability */
+    padding: 0.5rem;
   }
 
   .btn {
-    width: 100%;
+    width: 70%;
     text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem; /* ✅ Make button text bigger */
   }
 }

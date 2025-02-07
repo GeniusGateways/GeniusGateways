@@ -38,20 +38,14 @@ body {
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 80px;
+  padding: 30px;
   max-width: 300px;
   transition: transform 0.3s ease;
 }
 
-/* Active service card effect */
-.service-card.active {
-  border: 2px solid #041777;
-  
-}
-
 /* Hover Effect for Service Cards */
 .service-card:hover {
-  transform: scale(1.04); /* Slightly enlarges on hover */
+  transform: scale(1.02); /* Slightly enlarges on hover */
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -67,26 +61,13 @@ body {
 
 .service-description {
   font-size: 0.9rem;
-  color: #666;
+  color: black;
 }
 
 .slider-navigation {
   margin-top: 20px;
 }
 
-.nav-dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-
-.nav-dot.active {
-  background-color: #041777;
-}
 
 .slider-pagination {
   display: flex;
@@ -94,17 +75,6 @@ body {
   align-items: center;
   gap: 10px;
   margin-top: 20px;
-}
-
-.page-number {
-  font-size: 1rem;
-  color: #333;
-}
-
-.page-line {
-  width: 50px;
-  height: 2px;
-  background-color: #041777;
 }
 
 /* Responsive Design */
@@ -136,13 +106,6 @@ body {
       font-size: 1.8rem;
   }
 
-  .slider-pagination .page-number {
-      font-size: 0.9rem;
-  }
-
-  .page-line {
-      width: 40px; /* Adjust the line width */
-  }
 }
 
 /* For mobile devices (screen width <= 480px) */
