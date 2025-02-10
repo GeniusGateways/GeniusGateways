@@ -17,12 +17,9 @@ const Footer = () => {
           FOR YOUR <span className="highlight">GLOBAL JOURNEY</span>!
         </p>
         <div className="footer-contact">
-          <p><FaWhatsapp className="icon" /> +91 7666058015</p>
+          <p><FaWhatsapp className="icon" /> +91 8097028666</p>
           <p><FaEnvelope className="icon" /> geniusgateway@gmail.com</p>
         </div>
-        <a href="https://wa.me/+917666058015" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-          <FaWhatsapp /> Whatsapp Click to Chat
-        </a>
       </div>
 
      
@@ -31,16 +28,19 @@ const Footer = () => {
       <div className="footer-section">
         <h1>Contact us</h1>
         <p>
-          Registered office:<br />
-          A/402, Ganpati Complex, Sector 27,<br />
-          Nerul east, Navi Mumbai 400706
-        </p>
-        <p>
-          Branch:<br />
-          G 2, Dwarkesh Darshan, Khajuria Tank Road,<br />
+        G 2, Dwarkesh Darshan, Khajuria Tank Road,<br />
           Opp. Majitia Nagar, Off S V Road,<br />
           Kandivali West, Mumbai 400067
         </p>
+        <p>
+          Branch:<br />
+          branch in deoria, UP<br />
+        </p>
+
+        <a href="https://wa.me/+918097028666" className="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+          <FaWhatsapp /> Whatsapp Click to Chat
+        </a>
+
         <div className="social-icons">
           <a href="#"><FaFacebookF className="social-icon" /></a>
           <a href="#"><FaInstagram className="social-icon" /></a>
