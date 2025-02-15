@@ -1,71 +1,60 @@
 import React, { useEffect, useState } from "react";
-import "../styles/mbbs.css";
-import { Link } from "react-router-dom";
-
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
-import { backend_api } from "../App";
+import { fetchMbbs } from "../api/mbbsApi";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/mbbs.css"; // Import external CSS
 
 const Mbbs = () => {
-  const [countries, setCountries] = useState([]);
-
-  const fetchMbbs = async () => {
-    try {
-      console.log(`${backend_api}/api/Mbbs`);
-      const req = await fetch(`${backend_api}/api/Mbbs`);
-      const data = await req.json();
-      console.log(data.docs);
-      setCountries(data.docs); // Assuming the API response has the "docs" field
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  const [mbbsList, setMbbsList] = useState([]);
 
   useEffect(() => {
-    fetchMbbs();
+    const getMbbs = async () => {
+      try {
+        const data = await fetchMbbs();
+        if (Array.isArray(data)) {
+          setMbbsList(data);
+        } else {
+          console.error("Invalid data format received:", data);
+          setMbbsList([]);
+        }
+      } catch (error) {
+        console.error("Error fetching MBBS data:", error);
+        setMbbsList([]);
+      }
+    };
+    getMbbs();
   }, []);
 
   return (
-    <>
-      <div className="main-container">
-                <Header />
-                <HeroSection />
+    <div className="container py-5">
+      {/* MBBS Heading - Centered at the Top */}
+      <div className="mbbs-header text-center">
+        <h2 className="mbbs-title">MBBS</h2>
       </div>
 
-      <section className="mbbs-section">
-        {/* MBBS Header */}
-        <div className="mbbs-header">
-          <h1>MBBS</h1>
-          <span className="underline"></span>
-        </div>
-
-        {/* Dynamically render MBBS cards */}
-        <div className="mbbs-cards">
-          {countries.map((country) => (
-            <div className="mbbs-card" key={country._id}>
-              <div className="mbbs-image">
-                <img
-                  src={`${backend_api}${country.image.url}`}
-                  alt={`MBBS in ${country.title}`}
-                />
-              </div>
-              <div className="mbbs-content">
-                <h2>{country.title}</h2>
-                <p>
-                  {country['short-detail']?.root?.children?.[0]?.children?.[0]?.text || "No details available"}
-                </p>
-                <Link to={`/Detail`}  state={ {Mbbs_country:country} } className="read-more">
-                  Read more &rarr;
-                </Link>
-              </div>
+      {/* MBBS Grid - Responsive Cards */}
+      <div className="mbbs-container">
+        {mbbsList.map((mbbs) => (
+          <div key={mbbs._id} className="mbbs-card">
+            {/* MBBS Image */}
+            <div className="mbbs-image">
+              <img src={mbbs.imageUrl || "/images/placeholder.jpg"} alt={mbbs.title || "MBBS Image"} />
             </div>
-          ))}
-        </div>
-      </section>
 
-      <Footer />
-    </>
+            {/* MBBS Content */}
+            <div className="mbbs-content text-center">
+              <h6 className="mbbs-title">{mbbs.title || "Untitled"}</h6>
+              {mbbs.description && (
+                <p className="mbbs-description">
+                  {mbbs.description.length > 80
+                    ? `${mbbs.description.substring(0, 80)}...`
+                    : mbbs.description}
+                </p>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 

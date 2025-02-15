@@ -1,38 +1,116 @@
-.blog-section {
-  padding: 50px 20px;
-  background: #f9f9f9;
-}
+/* Blog Page Container */
 
-.blog-card {
+.blog-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 10px;
   display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  justify-content: center;
+  align-items: center;
 }
 
+.blog-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f5998;
+  padding: 10px 20px;
+  display: inline-block;
+  animation: fadeInDown 1s ease-in-out;
+  margin: 0 auto; /* Centers the title horizontally */
+  text-align: center;
+}
+
+/* Blog Grid Container */
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row on large screens */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Blog Card Styling */
+.blog-card {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: transform 0.1s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0.9;
+  overflow: hidden;
+}
+
+/* Hover Effect */
 .blog-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(12, 0, 0, 0.15);
+}
+
+/* Blog Image */
+.blog-image {
+  height: 160px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
 }
 
 .blog-image img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
+.blog-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Blog Content */
 .blog-content {
-  padding: 20px;
+  padding: 15px;
+  text-align: center;
 }
 
-.blog-content h2 {
-  font-size: 1.5rem;
-  color: #4a47a3;
+.blog-description {
+  font-size: 14px;
+  color: #100000;
+  min-height: 50px;
 }
 
+/* Responsive Design */
 
-.read-more:hover {
-  text-decoration: underline;
+/* Medium Screens (Tablets: 768px - 992px) */
+@media (max-width: 992px) {
+  .blog-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+  }
+}
+
+/* Small Screens (Mobile: 576px - 768px) */
+@media (max-width: 768px) {
+  .blog-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+  }
+}
+
+/* Very Small Screens (Below 576px) */
+@media (max-width: 576px) {
+  .blog-title {
+    font-size: 24px;
+  }
+  
+  .blog-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 card per row */
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

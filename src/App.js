@@ -10,9 +10,10 @@ import BlogPage from "./pages/BlogPage";
 import Mbbs from "./pages/Mbbs";
 import Popup from "./components/popup";
 import { Detail } from "./pages/Detail";
+import AdminPanel from "./pages/AdminPanel";
 
 
-export  const backend_api='http://localhost:3000'
+//export  const backend_api='http://localhost:3000'
 
    const App = () => {
 
@@ -29,6 +30,7 @@ export  const backend_api='http://localhost:3000'
           <Route path="/mbbs" element={<Mbbs />} />
           <Route path="/contactus" element={<ContactUsPage />} />
          <Route path="/Detail" element={<Detail/>}/>
+         <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </Router>
     </>

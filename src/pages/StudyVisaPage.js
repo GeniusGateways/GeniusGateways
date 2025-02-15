@@ -1,69 +1,61 @@
 import React, { useEffect, useState } from "react";
-import "../styles/studyVisa.css";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { fetchStudyVisa } from "../api/studyVisaApi"; // API function for study visa
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/studyVisa.css"; // External CSS file
 
-import Header from "../components/Header";
-import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
-import { backend_api } from "../App";
-
-const StudyVisaPage = () => {
-  const [countries, setCountries] = useState([]);
-
-  const fetchStudyabroad = async () => {
-    try {
-      console.log(`${backend_api}/api/studyabroad`);
-      const req = await fetch(`${backend_api}/api/studyabroad`);
-      const data = await req.json();
-      console.log(data.docs[0].image.url)
-      setCountries(data.docs); // Assuming the API response has the "docs" field
-    } catch (err) {
-      console.log(err);
-    }
-  };
+const StudyVisa = () => {
+  const [studyVisaList, setStudyVisaList] = useState([]);
 
   useEffect(() => {
-    fetchStudyabroad();
+    const getStudyVisa = async () => {
+      try {
+        const data = await fetchStudyVisa();
+        if (Array.isArray(data)) {
+          setStudyVisaList(data);
+        } else {
+          console.error("Invalid Study Visa data format:", data);
+          setStudyVisaList([]);
+        }
+      } catch (error) {
+        console.error("Error fetching Study Visa data:", error);
+        setStudyVisaList([]);
+      }
+    };
+    getStudyVisa();
   }, []);
 
   return (
-    <>
-      <div className="main-container">
-                <Header />
-                <HeroSection />
+    <div className="container py-5">
+      {/* Study Visa Heading */}
+      <div className="studyVisa-header text-center">
+        <h2 className="studyVisa-title">Study Visa</h2>
       </div>
 
-      <section className="study-visa">
-        {/* Section Header */}
-        <div className="section-header">
-          <h1>Study Visa</h1>
-          <span className="underline"></span>
-        </div>
-
-        {/* Dynamically render country panels */}
-        {countries.map((country, index) => (
-          <div
-            className={`study-section ${index % 2 === 0 ? "" : "reverse"}`}
-            key={country._id}
-          >
-            <div className="text-content">
-              <h2>{country.title} Overview</h2>
-              <p>{country['short-detail'].root.children[0].children[0].text}</p>
-             
-              <Link to={`/Detail`}  state={{ country }}>
-                <button  >Read more </button>
-              </Link>
+      {/* Study Visa Grid */}
+      <div className="studyVisa-container">
+        {studyVisaList.map((visa) => (
+          <div key={visa._id} className="studyVisa-card">
+            {/* Image */}
+            <div className="studyVisa-image">
+              <img src={visa.imageUrl || "/images/placeholder.jpg"} alt={visa.title || "Study Visa"} />
             </div>
-            <div className="image-content">
-              <img src={backend_api+country.image.url} alt={`Study in ${country.title}`} />
+
+            {/* Content */}
+            <div className="studyVisa-content text-center">
+              <h6 className="studyVisa-title">{visa.title || "Untitled"}</h6>
+              {visa.description && (
+                <p className="studyVisa-description">
+                  {visa.description.length > 80
+                    ? `${visa.description.substring(0, 80)}...`
+                    : visa.description}
+                </p>
+              )}
             </div>
           </div>
         ))}
-      </section>
-
-      <Footer />
-    </>
+      </div>
+    </div>
   );
 };
 
-export default StudyVisaPage;
+export default StudyVisa;
